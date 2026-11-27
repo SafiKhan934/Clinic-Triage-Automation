@@ -261,6 +261,8 @@ A video demonstration of the Clinic Triage Automation workflow is available belo
 
 [**Watch Clinic Triage Automation Demonstration**](https://youtu.be/joFrrWu_jAo)
 
+(Note: Execution / Testing or Workflow starts at 2:30)
+
 ---
 
 ## Project Purpose
