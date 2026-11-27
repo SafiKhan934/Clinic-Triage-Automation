@@ -25,7 +25,7 @@ This automation demonstrates how AI and workflow automation can help organize in
 
 ### 1. Complete Workflow Overview
 
-![Workflow Overview](screenshots/01-Workflow-Overview.png)
+![Workflow-Overview](01-Workflow-Overview.png)
 
 ### 2. Successful Execution
 
