@@ -182,31 +182,26 @@ The exported JSON is a sanitized template. You must configure your own Gmail cre
 
 ## Repository Structure
 
-```text
+```tex
 Clinic-Triage-Automation/
 │
-├── workflow/
-│   └── Clinic-Triage-Automation-Sanitized.json
+├── Clinic-Triage-Automation-Sanitized.json
+├── Main-Automations-Error-Workflow-Sanitized.json
 │
-├── error-workflow/
-│   └── Main-Automations-Error-Workflow-Sanitized.json
+├── Clinic-Triage-Input-Data.csv
+├── Clinic-Triage-Output-Data.csv
 │
-├── data/
-│   ├── Clinic-Triage-Input-Data.csv
-│   └── Clinic-Triage-Output-Data.csv
-│
-├── screenshots/
-│   ├── 01-Workflow-Overview.png
-│   ├── 02-Successful-Execution.png
-│   ├── 03-Gmail-Error-Handling.png
-│   ├── 04-Emergency-Alert-Top.png
-│   ├── 05-Emergency-Alert-Bottom.png
-│   ├── 06-Needs-Review-Alert-Top.png
-│   ├── 07-Needs-Review-Alert-Bottom.png
-│   ├── 08-AI-Classification-Node.png
-│   ├── 09-Prepare-Patient-Record.png
-│   ├── 10-Patient-Input-Data.png
-│   └── 11-Patient-Output-Data.png
+├── 01-Workflow-Overview.png
+├── 02-Successful-Execution.png
+├── 03-Gmail-Error-Handling.png
+├── 04-Emergency-Alert-Top.png
+├── 05-Emergency-Alert-Bottom.png
+├── 06-Needs-Review-Alert-Top.png
+├── 07-Needs-Review-Alert-Bottom.png
+├── 08-AI-Classification-Node.png
+├── 09-Prepare-Patient-Record.png
+├── 10-Patient-Input-Data.png
+├── 11-Patient-Output-Data.png
 │
 └── README.md
 ```
