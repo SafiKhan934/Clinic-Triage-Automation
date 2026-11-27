@@ -54,7 +54,7 @@ The exported workflow is a portfolio template. You must configure your own crede
 
 ### 2. Successful Execution
 
-![Successful-Execution](screenshots/02-Successful-Execution.png)
+![Successful-Execution](02-Successful-Execution.png)
 
 ### 3. AI Patient Classification
 
