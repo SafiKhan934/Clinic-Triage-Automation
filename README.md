@@ -264,7 +264,7 @@ Management Sciences Student at GIKI | AI Business Automation & Integration
 
 A video demonstration of the Clinic Triage Automation workflow is available below.
 
-**[Watch Clinic Triage Automation Demonstration](YOUR_VIDEO_LINK)**
+[**Watch Clinic Triage Automation Demonstration**](https://youtu.be/joFrrWu_jAo)
 
 ---
 
