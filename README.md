@@ -12,14 +12,39 @@ Clinics may receive patient submissions containing symptoms, appointment request
 
 This automation demonstrates how AI and workflow automation can help organize incoming patient information and notify clinic staff when a submission requires attention.
 
+## Business Problem
+
+Clinics receive different types of patient submissions, including:
+
+- Reports of symptoms that may require urgent attention.
+- Routine dental concerns.
+- Unclear or incomplete patient information.
+- General questions about clinic services and appointments.
+
+Manually reviewing and categorizing every submission can create additional administrative work and make it harder to identify submissions that need prompt attention.
+
+## Proposed Solution
+
+The Clinic Triage Automation workflow uses Google Gemini to classify incoming patient submissions into predefined categories.
+
+It validates the AI-generated results and applies conditional routing rules to determine whether a Gmail alert should be sent to clinic staff. Patient records and classification results are also stored in Google Sheets for administrative tracking.
+
 ## Workflow Process
 
 1. **Patient Intake:** Receives patient information through an n8n Webhook (POST request).
 2. **AI Classification:** Google Gemini analyzes the submitted information and assigns a category, urgency score, and short factual summary.
 3. **Output Validation:** A JavaScript Code node parses and validates the AI response, checking the category, urgency score, and summary.
-4. **Alert Decision:** An IF node determines whether the submission requires an immediate email notification.
+4. **Alert Decision:** An IF node determines whether the submission meets the configured alert conditions.
 5. **Email Notification:** Gmail sends an alert to the configured clinic recipient for submissions meeting the alert conditions.
 6. **Record Management:** Patient information and classification results are prepared and saved to Google Sheets.
+
+## Main Workflow
+
+The complete n8n workflow is available as a sanitized JSON export.
+
+**[Download Main Workflow (Sanitized JSON)](Clinic-Triage-Automation-Sanitized.json)**
+
+The exported workflow is a portfolio template. You must configure your own credentials, Google Sheets spreadsheet, Gmail recipient, and other integration settings before execution.
 
 ## Workflow Demonstration
 
@@ -29,7 +54,7 @@ This automation demonstrates how AI and workflow automation can help organize in
 
 ### 2. Successful Execution
 
-![Successful-Execution](02-Successful-Execution.png)
+![Successful-Execution](screenshots/02-Successful-Execution.png)
 
 ### 3. AI Patient Classification
 
@@ -87,14 +112,26 @@ If either condition is true, the workflow sends a Gmail notification and then sa
 
 Otherwise, the submission is saved directly to Google Sheets.
 
+## Key Features
+
+- Webhook-based patient information intake.
+- AI-powered patient submission classification using Google Gemini.
+- Automated urgency scoring and factual summarization.
+- JavaScript-based AI output parsing and validation.
+- Conditional routing using an IF node.
+- Automated Gmail notifications for submissions meeting alert conditions.
+- Patient record preparation and storage in Google Sheets.
+- Separate error notification workflow.
+- Sanitized workflow exports for portfolio demonstration.
+
 ## Technologies Used
 
-- **n8n:** Workflow automation and integration
-- **Google Gemini:** AI-powered classification and summarization
-- **JavaScript:** Data parsing, validation, and processing
-- **Webhook:** Patient submission intake
-- **Gmail API:** Automated clinic email notifications
-- **Google Sheets:** Patient record storage
+- **n8n:** Workflow automation and integration.
+- **Google Gemini:** AI-powered classification and summarization.
+- **JavaScript:** Data parsing, validation, and processing.
+- **Webhook:** Patient submission intake.
+- **Gmail API:** Automated clinic email notifications.
+- **Google Sheets:** Patient record storage.
 
 ## Testing & Validation
 
@@ -109,11 +146,39 @@ The workflow was tested using four different scenarios to verify its classificat
 
 All four scenarios were tested to verify the expected routing behavior.
 
+## Sample Input & Output Data
+
+The repository includes fictional patient datasets for testing and demonstrating the workflow.
+
+- **[Patient Input Data (CSV)](Clinic-Triage-Input-Data.csv):** Contains fictional patient submissions provided to the workflow.
+- **[Patient Output Data (CSV)](Clinic-Triage-Output-Data.csv):** Contains processed patient records and AI-generated classification results.
+
+All sample records are fictional and are included for demonstration purposes only.
+
+## Email Notifications
+
+The workflow uses Gmail to notify the configured clinic recipient when a submission meets either of the alert conditions.
+
+The notification includes:
+
+- Patient name.
+- Patient age.
+- Contact number and email.
+- Classification category.
+- Urgency score.
+- AI-generated factual summary.
+
+The email notification is intended to make relevant submissions visible to clinic staff for further review. It does not represent a medical assessment or emergency response service.
+
 ## Error Handling
 
 A separate n8n error workflow is included in the repository.
 
 It is designed to send an email notification when an execution error occurs, helping make workflow failures visible for review.
+
+**[Download Error Handling Workflow (Sanitized JSON)](Main-Automations-Error-Workflow-Sanitized.json)**
+
+The exported JSON is a sanitized template. You must configure your own Gmail credentials and recipient email before using it.
 
 ## Repository Structure
 
@@ -153,12 +218,12 @@ The workflow JSON files are sanitized portfolio templates. They are not ready to
 To use the automation:
 
 1. Install or access an n8n instance.
-2. Import the main workflow JSON file.
+2. Import the [main workflow JSON](Clinic-Triage-Automation-Sanitized.json).
 3. Configure your own Google Gemini credentials.
 4. Connect your Gmail account and configure the clinic recipient email.
 5. Connect your Google Sheets account and select your own spreadsheet and worksheet.
 6. Configure the webhook endpoint and submit test data.
-7. Import and configure the separate error workflow if required.
+7. Import and configure the separate [error workflow](Main-Automations-Error-Workflow-Sanitized.json) if required.
 
 **Note:** The exported workflows do not contain working credentials or private account configurations. You must configure your own integrations before execution.
 
@@ -171,18 +236,50 @@ To use the automation:
 - Human clinic staff remain responsible for all clinical decisions.
 - The repository uses fictional sample data. Do not upload real patient information, personal medical records, or private credentials.
 
+## Project Status
+
+**Completed and tested.**
+
+The workflow has been implemented and tested using four different patient submission scenarios to verify its classification and routing behavior.
+
+The repository includes sanitized workflow exports, sample datasets, and execution screenshots.
+
+## Limitations
+
+- AI-generated classifications may be inaccurate and should not be treated as clinical decisions.
+- The workflow depends on the availability and correct configuration of external integrations.
+- Gmail notifications depend on the configured email account and recipient.
+- The workflow does not provide medical diagnosis, treatment, appointment booking, or emergency medical assistance.
+- Human clinical assessment remains necessary for patient care decisions.
+
+## Author
+
+**Safi UR Rehman**
+
+Management Sciences Student at GIKI | AI Business Automation & Integration
+
+- **GitHub:** [SafiKhan934](https://github.com/SafiKhan934)
+
+## Project Video
+
+A video demonstration of the Clinic Triage Automation workflow is available below.
+
+**[Watch Clinic Triage Automation Demonstration](YOUR_VIDEO_LINK)**
+
+---
+
 ## Project Purpose
 
 This project demonstrates practical skills in:
 
-- AI-powered workflow automation
-- API and webhook integration
-- Prompt design and structured AI output
-- JSON parsing and data validation
-- Conditional workflow routing
-- Error notification workflows
-- Google Workspace integration
-- Business process automation
+- AI-powered workflow automation.
+- API and webhook integration.
+- Prompt design and structured AI output.
+- JSON parsing and data validation.
+- Conditional workflow routing.
+- Error notification workflows.
+- Google Workspace integration.
+- Business process automation.
 
 ---
 
