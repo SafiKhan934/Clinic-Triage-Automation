@@ -29,41 +29,41 @@ This automation demonstrates how AI and workflow automation can help organize in
 
 ### 2. Successful Execution
 
-![Successful Execution](screenshots/02-Successful-Execution.png)
+![Successful-Execution](02-Successful-Execution.png)
 
 ### 3. AI Patient Classification
 
-![AI Classification Node](screenshots/08-AI-Classification-Node.png)
+![AI-Classification-Node](08-AI-Classification-Node.png)
 
 ### 4. Patient Record Preparation
 
-![Prepare Patient Record](screenshots/09-Prepare-Patient-Record.png)
+![Prepare-Patient-Record](09-Prepare-Patient-Record.png)
 
 ### 5. Emergency Alert Notification
 
-![Emergency Alert - Top](screenshots/04-Emergency-Alert-Top.png)
+![Emergency Alert - Top](04-Emergency-Alert-Top.png)
 
-![Emergency Alert - Bottom](screenshots/05-Emergency-Alert-Bottom.png)
+![Emergency Alert - Bottom](05-Emergency-Alert-Bottom.png)
 
 ### 6. Needs Review Notification
 
-![Needs Review Alert - Top](screenshots/06-Needs-Review-Alert-Top.png)
+![Needs Review Alert - Top](06-Needs-Review-Alert-Top.png)
 
-![Needs Review Alert - Bottom](screenshots/07-Needs-Review-Alert-Bottom.png)
+![Needs Review Alert - Bottom](07-Needs-Review-Alert-Bottom.png)
 
 ### 7. Error Handling
 
-![Gmail Error Handling](screenshots/03-Gmail-Error-Handling.png)
+![Gmail Error Handling](03-Gmail-Error-Handling.png)
 
 ### 8. Input & Output Data
 
 **Patient Input Data**
 
-![Patient Input Data](screenshots/10-Patient-Input-Data.png)
+![Patient Input Data](10-Patient-Input-Data.png)
 
 **Patient Output Data**
 
-![Patient Output Data](screenshots/11-Patient-Output-Data.png)
+![Patient Output Data](11-Patient-Output-Data.png)
 
 ## Classification & Routing Logic
 
