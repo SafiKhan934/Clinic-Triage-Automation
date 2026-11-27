@@ -1,0 +1,71 @@
+{
+  "name": "Main Automations - Error Workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        -128,
+        -80
+      ],
+      "id": "4940b468-d777-4a23-81e7-ac779958e1c9",
+      "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "content": "ERROR DETECTION & NOTIFICATION:\nCaptures workflow execution failures through the Error Trigger and sends automated Gmail notifications containing error details.",
+        "width": 416,
+        "color": "#2F2D2E"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -128,
+        -272
+      ],
+      "id": "da319d76-84e8-4e8c-856c-a98dc47f1547",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "sendTo": "your-email@example.com",
+        "subject": "=[{{ $json.workflow.name }}] - Workflow Execution Failed",
+        "message": "=<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body style=\"margin:0; padding:24px; background-color:#f4f6f8; font-family:Arial,sans-serif; color:#333333;\">\n\n  <div style=\"max-width:600px; margin:0 auto; background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; overflow:hidden;\">\n\n    <div style=\"background:#b42318; padding:22px 25px; color:#ffffff;\">\n      <h2 style=\"margin:0; font-size:21px;\">\n        Workflow Execution Failed\n      </h2>\n      <p style=\"margin:8px 0 0; font-size:13px;\">\n        {{ $json.workflow.name }} | Automated Error Monitoring\n      </p>\n    </div>\n\n    <div style=\"padding:25px;\">\n\n      <p style=\"font-size:15px; line-height:1.6;\">\n        Hello,\n      </p>\n\n      <p style=\"font-size:14px; line-height:1.6; color:#555555;\">\n        An error occurred during the execution of\n        <strong>{{ $json.workflow.name }}</strong>.\n        Please review the details below and take the necessary corrective action.\n      </p>\n\n      <h3 style=\"font-size:16px; margin-top:25px; color:#333333;\">\n        Error Details\n      </h3>\n\n      <table style=\"width:100%; border-collapse:collapse; font-size:13px;\">\n\n        <tr>\n          <td style=\"padding:12px; background:#f4f6f8; font-weight:bold; width:35%;\">\n            Workflow\n          </td>\n          <td style=\"padding:12px; border-bottom:1px solid #eeeeee;\">\n            {{ $json.workflow.name }}\n          </td>\n        </tr>\n\n        <tr>\n          <td style=\"padding:12px; background:#f4f6f8; font-weight:bold;\">\n            Failed Node\n          </td>\n          <td style=\"padding:12px; border-bottom:1px solid #eeeeee;\">\n            {{ $json.execution.lastNodeExecuted }}\n          </td>\n        </tr>\n\n        <tr>\n          <td style=\"padding:12px; background:#f4f6f8; font-weight:bold;\">\n            Error Message\n          </td>\n          <td style=\"padding:12px; border-bottom:1px solid #eeeeee; color:#b42318; word-break:break-word;\">\n            {{ $json.execution.error.message }}\n          </td>\n        </tr>\n\n        <tr>\n          <td style=\"padding:12px; background:#f4f6f8; font-weight:bold;\">\n            Execution ID\n          </td>\n          <td style=\"padding:12px; border-bottom:1px solid #eeeeee;\">\n            {{ $json.execution.id }}\n          </td>\n        </tr>\n\n        <tr>\n          <td style=\"padding:12px; background:#f4f6f8; font-weight:bold;\">\n            Execution Mode\n          </td>\n          <td style=\"padding:12px; border-bottom:1px solid #eeeeee;\">\n            {{ $json.execution.mode }}\n          </td>\n        </tr>\n\n      </table>\n\n      <div style=\"margin-top:25px; text-align:center;\">\n        <a href=\"{{ $json.execution.url }}\"\n           style=\"display:inline-block; padding:12px 22px; background:#2563eb; color:#ffffff; text-decoration:none; border-radius:6px; font-size:14px; font-weight:bold;\">\n          View Failed Execution\n        </a>\n      </div>\n\n      <p style=\"font-size:13px; color:#666666; margin-top:25px; line-height:1.5;\">\n        Please investigate the failure, resolve the underlying issue, and restore normal workflow operation.\n      </p>\n\n    </div>\n\n    <div style=\"background:#f4f6f8; padding:16px 25px; text-align:center; font-size:11px; color:#777777;\">\n      Automated Error Notification<br>\n      {{ $json.workflow.name }}\n    </div>\n\n  </div>\n\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        192,
+        -80
+      ],
+      "id": "e1ad5bcf-20b6-4e61-be3f-35e489f02d0a",
+      "name": "Send Error Notification"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send Error Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "nodeGroups": [],
+  "tags": []
+}
