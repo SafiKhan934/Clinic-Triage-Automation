@@ -1,8 +1,0 @@
-Patient Name ,Phone,Email,Age,Symptoms,Category,Urgency Score,Summary,,,,,
- Usman Ahmed,9.23001E+11,usman.test@example.com,35,"Facial swelling, fever, and difficulty swallowing",Emergency,10,"The patient reports facial swelling, fever, and difficulty swallowing.",,,,,
- Ali Raza,9.23001E+11,ali.test@example.com,24,Mild headache for two days,Needs_Review,5,"The patient reports a mild headache for two days, which is a non-dental symptom requiring review.",,,,,
- Sara Khan,9.23001E+11,sara.test@example.com,29,Wants information about clinic timings and available services,Inquiry,1,Sara Khan is requesting information regarding clinic timings and available services.,,,,,
- Hamza Malik,9.23001E+11,hamza.test@example.com,42,Feeling unwell but unable to explain symptoms clearly,Needs_Review,5,"The patient reports feeling unwell and unable to explain their symptoms clearly, requiring clarification.",,,,,
- Ayesha Noor,9.23001E+11,ayesha.test@example.com,31,Severe chest pain and difficulty breathing,Emergency,10,The patient reported experiencing severe chest pain and difficulty breathing.,,,,,
- Bilal Hussain,9.23001E+11,bilal.test@example.com,50,Requests information about appointment booking,Inquiry,1,The patient is requesting information about appointment booking.,,,,,
-,,,,,,,,,,,,
